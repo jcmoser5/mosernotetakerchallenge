@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const uuid = require('uuid');
 const { notes } = require('../../data/db.json');
-const { validateNote } = require('../../lib/notes');
+const { validateNote, createNewNote } = require('../../lib/notes');
 // set up GET
 
 router.get('/notes', (req, res) => {
@@ -15,7 +15,8 @@ router.post('/notes', (req, res) => {
   if (!validateNote(req.body)) {
     res.status(400).send('Note needs to have a title and body text before it can be saved.');
   } else {
-
+    const note = createNewNote(req.body, notes);
+    res.json(note);
   }
 });  
 
