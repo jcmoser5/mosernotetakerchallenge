@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const uuid = require('uuid');
-const { notes } = require('../../data/db.json');
+let { notes } = require('../../data/db.json');
 const { validateNote, createNewNote, deleteNote } = require('../../lib/notes');
 // set up GET
 
@@ -18,7 +18,7 @@ router.post('/notes', (req, res) => {
     const note = createNewNote(req.body, notes);
     res.json(note);
   }
-});  
+});
 
 // set up bonus
 router.delete('/notes/:id', (req, res) => {
@@ -27,8 +27,8 @@ router.delete('/notes/:id', (req, res) => {
   if (!result) {
     res.status(400).send('There is no note with that id.');
   } else {
-    newNotes = notes.filter(note => note.id !== req.params.id);
-    deleteNote(newNotes);
+    notes = notes.filter(note => note.id !== req.params.id);
+    deleteNote(notes);
     res.json('Note deleted.');
   }
 });
