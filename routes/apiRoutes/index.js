@@ -1,6 +1,11 @@
 const router = require('express').Router();
-const { notes } = require('../../data/db.json');
+const { db } = require('../../data/db.json');
+
 // set up GET
+
+router.get('/notes', (req, res) => {
+  res.json(db);
+});
 
 // set up POST
 
