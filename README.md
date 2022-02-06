@@ -19,7 +19,7 @@ https://floating-brook-51684.herokuapp.com/
 Click the plus sign in the top right to begin a new note. Provide a title and note text to make the save icon appear. Clicking the save icon stores the note. Saved notes can be selected from the list on the left to bring them up. Click the trashcan icon to delete a note.
 
 ## Screenshot
-![screenshot]
+![screenshot]https://github.com/jcmoser5/mosernotetakerchallenge/blob/main/public/assets/floating-brook-51684.herokuapp.com_.png
 
 ## Dependencies
 [Express](https://www.npmjs.com/package/express) and [UUID](https://www.npmjs.com/package/uuid).
